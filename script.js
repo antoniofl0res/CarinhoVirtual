@@ -87,17 +87,25 @@ async function generateMessage(person, feeling) {
     year: 'numeric',
   });
 
+   const formattedTime = currentDate.toLocaleTimeString('pt-BR', {
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+
   // Context and prompt
   const context = `
     Contexto: Sou um homem de quase 40 anos, vivo na Cidade do Cabo, África do Sul, e sou brasileiro de Porto Alegre, RS. Tenho forte desejo de manter laços emocionais com meus pais idosos.
-- Mãe (Clair, nasceu 28-dezembro-1946): Gosta de café, de animais (cachorro e elefante sao os favoritos), de paisagens verdes, e arte (fez pinturas, se interessa pela historia da arte), é brincalhona, toma remedios (as vezes pode ser descuidada com remedios).
-- Pai (Antonio, nasceu 27-agosto-1943): Aprecia chimarrão, segue notícias,  é gremista (embora atualmente nao assista tanto futebol) e mantém diabetes sob controle.
+- Mãe (Clair, nasceu 28-dezembro-1946): Gosta de café, de animais (cachorro e elefante sao os favoritos), de paisagens verdes, e arte (fez pinturas, se interessa pela historia da arte). Faz uma torta de bolacha deliciosa. é brincalhona, toma remedios (as vezes pode ser descuidada com saude e remedios).
+- Pai (Antonio, nasceu 27-agosto-1943): Gosta de chimarrão, segue notícias, assava um currasdco especial. é gremista (embora atualmente nao assista tanto futebol) e mantém diabetes sob controle. Inteligente e bem articulado. 
 - Uso "tu" para abordagem direta e "a gente" para enfatizar unidade familiar, para o sujeito das frases. Priorizar PT-BR coloquial do RS. 
+- O meu fuso horario e' UTC+2.
 - Eu sinto falta deles. Ambos sentem muita falta de mim e precisam de conforto emocional. Usar "saudade"
 
-Instruções de estilo: Use tom informal, amoroso. Adapt the tone based on the feeling provided by the user: lighthearted and humorous for minor worries, empathetic and supportive for serious concerns.
-Hoje e' ${formattedDate}. Considere se a data e' relevante para o contexto.
-Importante: Respeitar limite de 120 tokens
+Instruções de estilo: 
+[Use tom informal, amoroso. Adapt the tone based on the feeling provided by the user: lighthearted and humorous for minor worries, empathetic and supportive for serious concerns.
+Expressoes familiares: "beijo no coração", "Oi", 
+Hoje é ${formattedDate}, e agora são ${formattedTime}. Considere se a data e hora são relevantes para o contexto (datas comemorativas, saudacoes, etc). O meu fuso horario e' UTC+2.
+Importante: maximo 120 tokens
   `;
 
   const prompt = `Prompt: ${person} escreveu que está se sentindo "${feeling}" e gostaria de ouvir de mim. Crie uma mensagem personalizada em PT-BR que reflita cuidado com o sentimento expressado.  Não usar o nome, mas se referir à pessoa com a relação familiar (Clair: mãe, mãezinha , madrezita, etc [+/- querida/amada]; Antonio: pai, pai querido, meu pai, etc). Incentive o destinatário a entrar em contato se sentir vontade. Use um humor apropriado ao sentimento deles. 

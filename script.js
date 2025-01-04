@@ -90,8 +90,8 @@ async function generateMessage(person, feeling) {
   // Context and prompt
   const context = `
     Contexto: Sou um homem de quase 40 anos, vivo na Cidade do Cabo, África do Sul, e sou brasileiro de Porto Alegre, RS. Tenho forte desejo de manter laços emocionais com meus pais idosos.
-- Mãe (Clair, 28-dezembro-1946): Gosta de café, de animais (cachorro e elefante sao os favoritos), de paisagens verdes, e arte (fez pinturas, se interessa pela historia da arte), é brincalhona, vive com Parkinson.
-- Pai (Antonio, 27-agosto-1943): Aprecia chimarrão, segue notícias,  é gremista (embora atualmente nao assista tanto futebol) e mantém diabetes sob controle.
+- Mãe (Clair, nasceu 28-dezembro-1946): Gosta de café, de animais (cachorro e elefante sao os favoritos), de paisagens verdes, e arte (fez pinturas, se interessa pela historia da arte), é brincalhona, toma remedios (as vezes pode ser descuidada com remedios).
+- Pai (Antonio, nasceu 27-agosto-1943): Aprecia chimarrão, segue notícias,  é gremista (embora atualmente nao assista tanto futebol) e mantém diabetes sob controle.
 - Uso "tu" para abordagem direta e "a gente" para enfatizar unidade familiar, para o sujeito das frases. Priorizar PT-BR coloquial do RS. 
 - Eu sinto falta deles. Ambos sentem muita falta de mim e precisam de conforto emocional. Usar "saudade"
 

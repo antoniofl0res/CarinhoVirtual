@@ -18,6 +18,12 @@ form.addEventListener('submit', async (e) => {
   const person = document.getElementById('person').value;
   const feeling = document.getElementById('feeling').value;
 
+// Validate the "person" selection
+  if (!person) {
+    alert('Por favor, selecione uma pessoa.'); // Show an error message
+    return; // Stop further execution
+  }
+
   // Show loading state
   generatedMessage.textContent = 'Gerando mensagem...';
   output.classList.remove('hidden');

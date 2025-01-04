@@ -1,0 +1,108 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; /* Increase max-width for a larger container */
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+input, select, button {
+  width: 97%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#output {
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+#generatedMessage {
+  background-color: #f9f9f9;
+  padding: 20px; /* Increase padding for more space inside the box */
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-style: italic;
+  font-size: 16px; /* Adjust font size if needed */
+  min-height: 200px; /* Increase minimum height for a larger box */
+  width: 92%; /* Make the box take up the full width of its container */
+  resize: vertical; /* Allow the user to resize the box vertically */
+  overflow-y: auto; /* Add a scrollbar if the content overflows */
+  white-space: pre-wrap; /* Preserve line breaks and spaces */
+  line-height: 1.5; /* Improve readability with more line spacing */
+  word-wrap: break-word; /* Ensure long words do not overflow */
+}
+
+#whatsappButton {
+  background-color: #25d366; /* WhatsApp green color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  display: inline-block;
+}
+
+#whatsappButton:hover {
+  background-color: #128c7e; /* Darker green on hover */
+}
+
+#newMessageButton {
+  background-color: #6c757d; /* Gray color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  display: inline-block;
+}
+
+#newMessageButton:hover {
+  background-color: #5a6268; /* Darker gray on hover */
+}

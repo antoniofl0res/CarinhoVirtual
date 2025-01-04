@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comforting Message Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Gerador de mensagens</h1>
+	<p> Oi, meus amores. Querem receber uma mensagem minha?</p>
+<p></p>
+    <form id="messageForm">
+      <label for="person">Para quem é a mensagem?</label>
+      <select id="person" required>
+        <option value="Clair">Clair</option>
+        <option value="Antonio">Antonio</option>
+      </select>
+
+      <label for="feeling">Como tu está te sentindo?</label>
+      <input type="text" id="feeling" placeholder="Ex: feliz, preocupado" required>
+
+      <button type="submit">Gerar mensagem</button>
+    </form>
+
+    <div id="output" class="hidden">
+      <h2>Sua Mensagem:</h2>
+      <p id="generatedMessage"></p>
+      <button id="whatsappButton" class="whatsapp-button">Enviar mensagem</button>
+      <button id="newMessageButton" class="new-message-button">Gerar nova</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -95,15 +95,18 @@ async function generateMessage(person, feeling) {
   // Context and prompt
   const context = `
     Contexto: Sou um homem de quase 40 anos, vivo na Cidade do Cabo, África do Sul, e sou brasileiro de Porto Alegre, RS. Tenho forte desejo de manter laços emocionais com meus pais idosos.
-- Mãe (Clair, nasceu 28-dezembro-1946): Gosta de café, de animais (cachorro e elefante sao os favoritos), de paisagens verdes, e arte (fez pinturas, se interessa pela historia da arte). Faz uma torta de bolacha deliciosa. é brincalhona, toma remedios (as vezes pode ser descuidada com saude e remedios).
+- Mãe (Clair, nasceu 28-dezembro-1946): Gosta de café, de animais (cachorro e elefante sao os favoritos), de paisagens verdes, e arte (fez pinturas, se interessa pela historia da arte). Faz uma torta de bolacha deliciosa. é brincalhona, sometimes makes fun (endearingly) of my greying hair. toma remedios (as vezes pode ser descuidada com saude e remedios).
 - Pai (Antonio, nasceu 27-agosto-1943): Gosta de chimarrão (ele nao prepara, mas gosta de tomar), segue notícias, assava um currasco especial. é gremista (embora atualmente nao assista tanto futebol) e mantém diabetes sob controle. Inteligente e bem articulado. 
-- Uso "tu" para abordagem direta e "a gente" para enfatizar unidade familiar, para o sujeito das frases. Priorizar PT-BR coloquial do RS. 
+- Uso "tu" para abordagem direta (ao inves de voce) e "a gente" para "nós", para o sujeito das frases. Priorizar PT-BR coloquial do RS. 
+Se dirigir à pessoa com a relação familiar (Clair: mãe, mãezinha , madrezita, etc [+/- querida/amada]; Antonio: pai, pai querido, meu pai, etc). Usar "mãe" e "pai" quando falar sobre eles.
 - O meu fuso horario e' UTC+2.
 - Eu sinto falta deles. Eles precisam de conforto emocional.
 
 Instruções de estilo: 
 [Use tom informal, amoroso. Adapt the tone based on the feeling provided by the user: lighthearted and humorous for minor worries, empathetic and supportive for serious concerns.
-Contextually relevant expressions: ["beijo no coração", "Oi", saudade,
+Contextually relevant expressions: [
+
+"beijo no coração", "beijo grande", "Oi", saudade,
 Encouragement and pride:
 
 "Orgulho"
@@ -121,7 +124,6 @@ Colloquial regional terms (RS colloquial, PT-BR):
 
 "Tri" (=bastante, muito)
 "faceiro" (=feliz, contente)
-"Bah"
 "baita"
 
 Topics of shared interest:
@@ -135,7 +137,7 @@ Hoje é ${formattedDate}, e agora são ${formattedTime}. Considere se a data e h
 Importante: maximo 120 tokens
   `;
 
-  const prompt = `Prompt: ${person} escreveu que está se sentindo "${feeling}" e gostaria de ouvir de mim. Crie uma mensagem personalizada em PT-BR que reflita cuidado com o sentimento expressado.  Não usar o nome, mas se referir à pessoa com a relação familiar (Clair: mãe, mãezinha , madrezita, etc [+/- querida/amada]; Antonio: pai, pai querido, meu pai, etc). Incentive o destinatário a entrar em contato se sentir vontade. Use um humor apropriado ao sentimento deles. 
+  const prompt = `Prompt: ${person} escreveu que está se sentindo "${feeling}" e gostaria de ouvir de mim. Crie uma mensagem personalizada em PT-BR que reflita cuidado com o sentimento expressado.  Incentive o destinatário a entrar em contato se sentir vontade. Use um humor apropriado ao sentimento deles. 
 Não invente personagens ou fatos. Esta mensagem será enviada através de um app. Apresente apenas a mensagem, use emojis.`;
 
   const response = await fetch('https://api.openai.com/v1/chat/completions', {

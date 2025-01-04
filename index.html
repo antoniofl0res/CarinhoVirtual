@@ -3,27 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carinho Virtual</title>
+  <title>Carinho Virtual 💌</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Add FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <div class="container">
-    <h1>Gerador de mensagens</h1>
-	<p> Oi, meus amores. Querem receber uma mensagem minha?</p>
-<p></p>
-    <form id="messageForm">
-      <label for="person">Para quem é a mensagem?</label>
-      <select id="person" required>
-        <option value="" disabled selected>(Selecionar)</option> <!-- Initial inactive option -->
-        <option value="Clair">Clair</option>
-        <option value="Antonio">Antonio</option>
-      </select>
+     <!-- Header Section -->
+    <h1 class="header-title">Carinho Virtual 💌</h1>
+    <div class="header-divider"></div>
 
-      <label for="feeling">Como tu está te sentindo?</label>
-      <input type="text" id="feeling" placeholder="Ex: feliz, preocupado" required>
+    <p>Oi, meus amores. Querem receber uma mensagem minha?</p>
+    <div class="form-card">
+      <form id="messageForm">
+        <label for="person">
+       <span class="form-icon">👩‍🦰👨‍🦰</span>  Para quem é a mensagem?
+       </label>
+        <select id="person" required>
+          <option value="" disabled selected>Selecionar</option>
+          <option value="Clair">Clair</option>
+          <option value="Antonio">Antonio</option>
+        </select>
 
-      <button type="submit">Gerar mensagem</button>
-    </form>
+        <label for="feeling">
+         <span class="form-icon">💭</span> Como tu está te sentindo?
+        </label>
+        <input type="text" id="feeling" placeholder="Ex: feliz, preocupado" required>
+
+        <button type="submit">Gerar mensagem</button>
+      </form>
+    </div>
 
     <div id="output" class="hidden">
       <h2>Sua Mensagem:</h2>

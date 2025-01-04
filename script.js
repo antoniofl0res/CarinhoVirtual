@@ -24,7 +24,7 @@ form.addEventListener('submit', async (e) => {
     return; // Stop further execution
   }
 
-  // Show loading state
+ // Show loading state
   generatedMessage.textContent = 'Gerando mensagem...';
   output.classList.remove('hidden');
   whatsappButton.style.display = 'none'; // Hide the button until the message is generated

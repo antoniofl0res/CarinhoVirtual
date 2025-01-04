@@ -1,3 +1,4 @@
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f9;
@@ -16,23 +17,55 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 500px; /* Increase max-width for a larger container */
+  max-width: 500px;
   text-align: center;
 }
 
+/* Header Section */
 h1 {
-  font-size: 24px;
+  font-size: 28px; /* Larger font size */
+  margin-bottom: 10px;
+  color: #007bff; /* Blue color for emphasis */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.header-divider {
+  width: 50px;
+  height: 3px;
+  background-color: #007bff; /* Blue divider */
+  margin: 0 auto 20px auto; /* Center the divider */
+}
+
+/* Form Section */
+.form-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
   margin-bottom: 20px;
+}
+
+.form-icon {
+  margin-right: 8px;
+  font-size: 18px;
+  color: #007bff; /* Primary color */
 }
 
 label {
   display: block;
   margin: 10px 0 5px;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+label i {
+  margin-right: 10px; /* Space between icon and text */
+  color: #007bff; /* Icon color */
 }
 
 input, select, button {
-  width: 97%;
+  width: 96%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
@@ -51,6 +84,7 @@ button:hover {
   background-color: #0056b3;
 }
 
+/* Output Section */
 #output {
   margin-top: 20px;
 }
@@ -61,22 +95,61 @@ button:hover {
 
 #generatedMessage {
   background-color: #f9f9f9;
-  padding: 20px; /* Increase padding for more space inside the box */
-  border-radius: 5px;
+  padding: 20px;
+  border-radius: 10px;
   border: 1px solid #ddd;
   font-style: italic;
-  font-size: 16px; /* Adjust font size if needed */
-  min-height: 200px; /* Increase minimum height for a larger box */
-  width: 92%; /* Make the box take up the full width of its container */
-  resize: vertical; /* Allow the user to resize the box vertically */
-  overflow-y: auto; /* Add a scrollbar if the content overflows */
-  white-space: pre-wrap; /* Preserve line breaks and spaces */
-  line-height: 1.5; /* Improve readability with more line spacing */
-  word-wrap: break-word; /* Ensure long words do not overflow */
+  font-size: 16px;
+  min-height: 200px;
+  width: 91%;
+  resize: vertical;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  line-height: 1.4;
+  word-wrap: break-word;
+  position: relative;
 }
 
+/* Speech Bubble Style */
+#generatedMessage::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #f9f9f9;
+}
+
+/* Highlight Header */
+#output h2 {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Typing Animation */
+@keyframes typing {
+  0% { content: '.'; }
+  33% { content: '..'; }
+  66% { content: '...'; }
+  100% { content: '.'; }
+}
+
+#generatedMessage.typing::after {
+  content: '';
+  animation: typing 1.5s infinite;
+  font-size: 24px;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
+
+/* WhatsApp Button */
 #whatsappButton {
-  background-color: #25d366; /* WhatsApp green color */
+  background-color: #25d366;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -88,11 +161,12 @@ button:hover {
 }
 
 #whatsappButton:hover {
-  background-color: #128c7e; /* Darker green on hover */
+  background-color: #128c7e;
 }
 
+/* New Message Button */
 #newMessageButton {
-  background-color: #6c757d; /* Gray color */
+  background-color: #6c757d;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -104,5 +178,5 @@ button:hover {
 }
 
 #newMessageButton:hover {
-  background-color: #5a6268; /* Darker gray on hover */
+  background-color: #5a6268;
 }

@@ -101,6 +101,7 @@ button:hover {
   font-style: italic;
   font-size: 16px;
   min-height: 200px;
+  max-height: 300px;
   width: 91%;
   resize: vertical;
   overflow-y: auto;

@@ -96,14 +96,41 @@ async function generateMessage(person, feeling) {
   const context = `
     Contexto: Sou um homem de quase 40 anos, vivo na Cidade do Cabo, África do Sul, e sou brasileiro de Porto Alegre, RS. Tenho forte desejo de manter laços emocionais com meus pais idosos.
 - Mãe (Clair, nasceu 28-dezembro-1946): Gosta de café, de animais (cachorro e elefante sao os favoritos), de paisagens verdes, e arte (fez pinturas, se interessa pela historia da arte). Faz uma torta de bolacha deliciosa. é brincalhona, toma remedios (as vezes pode ser descuidada com saude e remedios).
-- Pai (Antonio, nasceu 27-agosto-1943): Gosta de chimarrão (ele nao prepara, mas gosta de tomar), segue notícias, assava um currasdco especial. é gremista (embora atualmente nao assista tanto futebol) e mantém diabetes sob controle. Inteligente e bem articulado. 
+- Pai (Antonio, nasceu 27-agosto-1943): Gosta de chimarrão (ele nao prepara, mas gosta de tomar), segue notícias, assava um currasco especial. é gremista (embora atualmente nao assista tanto futebol) e mantém diabetes sob controle. Inteligente e bem articulado. 
 - Uso "tu" para abordagem direta e "a gente" para enfatizar unidade familiar, para o sujeito das frases. Priorizar PT-BR coloquial do RS. 
 - O meu fuso horario e' UTC+2.
-- Eu sinto falta deles. Ambos sentem muita falta de mim e precisam de conforto emocional. Usar "saudade"
+- Eu sinto falta deles. Eles precisam de conforto emocional.
 
 Instruções de estilo: 
 [Use tom informal, amoroso. Adapt the tone based on the feeling provided by the user: lighthearted and humorous for minor worries, empathetic and supportive for serious concerns.
-Expressoes familiares: "beijo no coração", "Oi"
+Contextually relevant expressions: ["beijo no coração", "Oi", saudade,
+Encouragement and pride:
+
+"Orgulho"
+"Parabéns"
+"Estamos felizes por ti"
+"Fico tranquilo"
+
+Expressions of care:
+
+"Se cuida"
+"Fica bem"
+"Melhoras"
+
+Colloquial regional terms (RS colloquial, PT-BR):
+
+"Tri" (=bastante, muito)
+"faceiro" (=feliz, contente)
+"Bah"
+"baita"
+
+Topics of shared interest:
+
+"Cachorros"
+"Natureza"
+"Fotos"
+"Viagem"
+]
 Hoje é ${formattedDate}, e agora são ${formattedTime}. Considere se a data e hora são relevantes para o contexto (datas comemorativas, saudacoes, etc). O meu fuso horario e' UTC+2.
 Importante: maximo 120 tokens
   `;
@@ -125,7 +152,7 @@ Não invente personagens ou fatos. Esta mensagem será enviada através de um ap
       ],
       max_tokens: 125,
       temperature: 0.75,
-      top_p: 0.8,
+      top_p: 0.9,
     }),
   });
 
